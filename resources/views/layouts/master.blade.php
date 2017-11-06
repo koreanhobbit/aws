@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	@include('includes._head')
+	<body id="page-top" class="index">
+		@include('includes._navigation')
+		@include('includes._header')
+		@yield('content')
+		@yield('modals')
+		@include('includes._footer')
+		@yield('script')
+	</body>
+</html>

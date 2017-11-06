@@ -1,0 +1,14 @@
+/*home blog*/
+.card_blog ul{
+	padding-left: 0;
+}
+
+.card_blog img{
+	height: 300px;
+	min-height:300px;
+	width:100%; 
+}
+
+.selected_img {
+	background: red;
+}
