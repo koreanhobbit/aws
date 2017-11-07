@@ -16,7 +16,6 @@ class ImagesTableSeeder extends Seeder
         		'size'=>9999,
         		'path'=>'storage/images/',
         		'type'=>'image/png',
-        		'user_id'=>1,
         		'created_at'=> new \DateTime(),
         		'updated_at'=> new \DateTime()
         	]);

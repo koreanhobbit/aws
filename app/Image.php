@@ -14,10 +14,6 @@ class Image extends Model
     	return $this->morphedByMany('App\blogpost', 'imageable');
     }
 
-    public function user() {
-    	return $this->belongsTo('App\User');
-    }
-
     public function portfolios() {
     	return $this->morphedByMany('App\Portfolio', 'imageable');
     }
