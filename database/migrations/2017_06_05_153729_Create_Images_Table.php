@@ -19,7 +19,8 @@ class CreateImagesTable extends Migration
             $table->integer('size');
             $table->string('path');
             $table->string('type');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedInteger('user_id');
+            $table->unique(['user_id']);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
