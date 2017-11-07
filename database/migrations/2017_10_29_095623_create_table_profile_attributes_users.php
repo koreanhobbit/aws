@@ -13,6 +13,7 @@ class CreateTableProfileAttributesUsers extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('profile_attributes_users', function (Blueprint $table) {
             $table->unsignedInteger('profileattribute_id');
             $table->unsignedInteger('user_id');
@@ -21,6 +22,7 @@ class CreateTableProfileAttributesUsers extends Migration
             $table->foreign('profileattribute_id')->references('id')->on('profileattributes')->onDelete('cascade');
             $table->string('value')->nullable();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -30,6 +32,8 @@ class CreateTableProfileAttributesUsers extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('profile_attributes_users');
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -13,6 +13,7 @@ class CreateBlogpostTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('blogposts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
@@ -25,6 +26,7 @@ class CreateBlogpostTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -34,6 +36,8 @@ class CreateBlogpostTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('blogposts');
+        Schema::enableForeignKeyConstraints();
     }
 }

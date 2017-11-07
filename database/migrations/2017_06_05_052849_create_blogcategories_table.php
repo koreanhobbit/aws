@@ -13,12 +13,14 @@ class CreateBlogcategoriesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('blogcategories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
             $table->string('slug');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +30,9 @@ class CreateBlogcategoriesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('blogcategories');
+        Schema::enableForeignKeyConstraints();
+
     }
 }

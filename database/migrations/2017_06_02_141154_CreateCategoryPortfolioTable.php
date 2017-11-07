@@ -13,12 +13,14 @@ class CreateCategoryPortfolioTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('portfolio_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
             $table->string('slug');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +30,8 @@ class CreateCategoryPortfolioTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('portfolio_categories');
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -13,6 +13,7 @@ class CreateWebsiteSocialMedia extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('websitesocmeds', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -22,6 +23,7 @@ class CreateWebsiteSocialMedia extends Migration
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -31,6 +33,8 @@ class CreateWebsiteSocialMedia extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('websitesocmeds');
+        Schema::enableForeignKeyConstraints();
     }
 }

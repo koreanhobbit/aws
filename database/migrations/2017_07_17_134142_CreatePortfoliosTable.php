@@ -13,6 +13,7 @@ class CreatePortfoliosTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('portfolios', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title');
@@ -26,6 +27,7 @@ class CreatePortfoliosTable extends Migration
             $table->timestamps();
 
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -35,6 +37,8 @@ class CreatePortfoliosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('portfolios');
+        Schema::enableForeignKeyConstraints();
     }
 }

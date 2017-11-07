@@ -13,6 +13,7 @@ class CreateTableProfilesocialmediasUsers extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('profilesocialmedias_users', function (Blueprint $table) {
             $table->unsignedInteger('profilesocialmedia_id');
             $table->unsignedInteger('user_id');
@@ -21,6 +22,8 @@ class CreateTableProfilesocialmediasUsers extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('link')->nullable();
         });
+        Schema::enableForeignKeyConstraints();
+
     }
 
     /**
@@ -30,6 +33,8 @@ class CreateTableProfilesocialmediasUsers extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('profilesocialmedias_users');
+        Schema::enableForeignKeyConstraints();
     }
 }
