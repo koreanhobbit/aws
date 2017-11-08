@@ -42,7 +42,7 @@ class ImageController extends Controller
 
         $file = $request->file('file');
         $filename = uniqid() . '_' . $file->getClientOriginalName();
-        $image->path = 'public/img/images/';
+        $image->path = 'img/images/';
         $image->name = $filename;
         $image->size = $file->getClientSize();
         $image->type = $file->getClientMimeType();
