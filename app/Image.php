@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
 	protected $fillable = [
-		'name','size', 'path','type', 'imageable_id', 'imageable_type', 'user_id'
+		'name','size', 'path','type', 'imageable_id', 'imageable_type','user_id',
 	]; 
 
     public function blogposts() {
@@ -24,6 +24,10 @@ class Image extends Model
 
     public function users() {
         return $this->morphedByMany('App\User', 'imageable');
+    }
+
+    public function user() {
+        return $this->belongsTo('App\User', 'user_id');
     }
 
 }

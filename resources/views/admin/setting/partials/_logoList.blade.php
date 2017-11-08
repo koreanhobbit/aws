@@ -10,8 +10,8 @@
 					@if ($image->id != 1)
 						<div class="col-md-2 col-sm-2">
 							<div class="thumbnail">
-								<a href="javascript:" class="logoLink" data-link="{{ asset($image->path . $image->name) }}" data-imageid="{{ $image->id }}">
-									<img src="{{ asset($image->path . $image->name) }}" alt="{{ $image->name }}" class="img-responsive thumbnail-img">
+								<a href="javascript:" class="logoLink" data-link="{{ url($image->path . $image->name) }}" data-imageid="{{ $image->id }}">
+									<img src="{{ url($image->path . $image->name) }}" alt="{{ $image->name }}" class="img-responsive thumbnail-img">
 								</a>
 							</div>
 						</div>

@@ -4,7 +4,7 @@
 			<div class="col-md-2 col-sm-6">
 				<div class="thumbnail">
 					<a href="javascript:" data-name="{{ $image->name }}" data-id="{{ $image->id }}" class="portfolio-gallery-image">
-						<img class="img-responsive thumbnail-img"	src="{{ asset('storage/images/'.$image->name) }}" alt="{{ $image->name }}">
+						<img class="img-responsive thumbnail-img"	src="{{ url($image->path . $image->name) }}" alt="{{ $image->name }}">
 					</a>
 				</div>
 			</div>

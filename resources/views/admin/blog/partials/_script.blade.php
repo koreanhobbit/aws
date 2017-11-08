@@ -29,7 +29,7 @@
 			{{-- click .featured-image-link --}}
 				$('.featured-img-link').click(function() {
 					var name = $(this).data('name');
-					var src = "{{ url('storage/images') }}" + "/" + name;
+					var src = "{{ url('public/img/images') }}" + "/" + name;
 					$('#remove-fm img').attr('src',src);
 					$('#set-featured-img').hide();
 					$('#remove-fm').show();
@@ -47,7 +47,7 @@
 
 			// add gallery click button
 				$('#addgallery-btn').click(function() {
-					url = "{{ asset('storage/images') }}";
+					url = "{{ url('public/img/images') }}";
 					if($(".gallerydisplay").length) {
 						$.each($('.selected'), function (index, value) {
 							var selected = $(this).children().data('id');

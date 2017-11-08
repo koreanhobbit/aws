@@ -17,8 +17,6 @@
     {{-- summer note css --}}
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
-    {{-- lightbox --}}
-    <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
      @yield('link')
     <!-- Scripts -->
     <script>
@@ -37,7 +35,6 @@
     @yield('body')
 
     <script src="{{ asset("js/app.js") }}"></script>
-    <script src="{{ asset("js/Chart.js") }}"></script>
     <script src="{{ asset("js/admin.js") }}"></script>
      {{-- summer note script --}}
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>

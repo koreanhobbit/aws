@@ -42,12 +42,11 @@ class ImageController extends Controller
 
         $file = $request->file('file');
         $filename = uniqid() . '_' . $file->getClientOriginalName();
-        $image->path = 'storage/images/';
+        $image->path = 'public/img/images/';
         $image->name = $filename;
-        $image->user_id = Auth::id();
         $image->size = $file->getClientSize();
         $image->type = $file->getClientMimeType();
-        // $image->is_maskot = 1;
+        $image->user_id = Auth::id();
         $image->save();
         $file->move($image->path, $filename);
         session()->flash('message', 'Image Added Successfully');

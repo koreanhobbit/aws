@@ -4,7 +4,7 @@
 			<div class="col-md-2 col-sm-6">
 				<a href="javascript:" data-dismiss="modal" data-name="{{ $image->name }}" data-id="{{ $image->id }}" class="portfolio-featured-image">
 					<div class="thumbnail">
-						<img class="img-responsive thumbnail-img"	src="{{ asset('storage/images/'.$image->name) }}" alt="{{ $image->name }}">
+						<img class="img-responsive thumbnail-img"	src="{{ url($image->path . $image->name) }}" alt="{{ $image->name }}">
 					</div>
 				</a>
 			</div>

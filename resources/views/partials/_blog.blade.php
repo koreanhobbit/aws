@@ -22,12 +22,12 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <img src="{{ asset($imagePath.$imageName) }}" class="img-responsive img-rounded" alt="{{ $imageName }}" style="height:260px; width:360px;">
+                                        <img src="{{ url($imagePath.$imageName) }}" class="img-responsive img-rounded" alt="{{ $imageName }}" style="height:260px; width:360px;">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imagePath.$imageName) }}" class="blog-modal-link">
+                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ url($imagePath.$imageName) }}" class="blog-modal-link">
                                             <h6 class="text-center" style="overflow-wrap: break-word;min-height: 50px;">{{ $post->title }}</h6>
                                         </a>
                                     </div>
@@ -51,7 +51,7 @@
                             <div class="panel-footer">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imagePath.$imageName) }}" class="blog-modal-link">Read Details <span class="
+                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ url($imagePath.$imageName) }}" class="blog-modal-link">Read Details <span class="
                                             pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@
 										<div class="thumbnail">
 											{{ csrf_field() }}
 											<a href="javascript:" type="button" data-toggle="modal" data-target="{{ '#'.'img-details' }}" class="image-thum-link" data-id="{{ $image->id }}">
-												<img src="{{ url('storage/images/'.$image->name) }}" alt="" class="img-responsive thumbnail-img">
+												<img src="{{ url($image->path . $image->name) }}" alt="" class="img-responsive thumbnail-img">
 											</a>
 										</div>
 									</div>
@@ -150,7 +150,7 @@
 					success: function (data){
 						imageId = data.id;
 						routeAdmin = "{{ url('admin') }}";
-						storageUrl = "{{ url('storage/images/') }}";
+						storageUrl = "{{ url('public/img/images/') }}";
 						var created_at = data.created_at.date;
 						var updated_at = data.updated_at.date;
 						created_at = created_at.substring(0, created_at.indexOf('.'));

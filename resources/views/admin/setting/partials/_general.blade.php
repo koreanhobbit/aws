@@ -25,7 +25,7 @@
 					<td class="col-sm-6">
 						<div class="thumbnail">
 							<a href="javascript:" data-toggle="modal" data-target="#logoModal" class="logoImgBtn" data-urllogo="{{ route('setting.logo') }}" data-urlicon="{{ route('setting.icon') }}">
-								<img @if(count($setting->first()->images->where('pivot.is_maskot', '=', 1)->first())) src="{{ asset('storage/images/'. $setting->first()->images->where('pivot.is_maskot', '=', 1)->first()->name) }}" @else src="{{ asset('storage/images/'. $images->where('id', '=', 1)->first()->name) }}" @endif alt="" class="img-thumbnail img-responsive">
+								<img @if(count($setting->first()->images->where('pivot.is_maskot', '=', 1)->first())) src="{{ url('public/img/images/'. $setting->first()->images->where('pivot.is_maskot', '=', 1)->first()->name) }}" @else src="{{ url('public/img/images/'. $images->where('id', '=', 1)->first()->name) }}" @endif alt="" class="img-thumbnail img-responsive">
 							</a>
 						</div>
 					</td>
@@ -37,7 +37,7 @@
 					<td class="col-sm-6">
 						<div class="thumbnail">
 							<a href="javascript:" data-toggle="modal" data-target="#iconModal" class="iconImgBtn" data-urllogo="{{ route('setting.logo') }}" data-urlicon="{{ route('setting.icon') }}">
-								<img @if(count($setting->first()->images->where('pivot.is_maskot', '=', 0)->first())) src="{{ asset('storage/images/'. $setting->first()->images->where('pivot.is_maskot', '=', 0)->first()->name) }}" @else src="{{ asset('storage/images/'. $images->where('id', '=', 1)->first()->name) }}" @endif alt="" class="img-thumbnail img-responsive">
+								<img @if(count($setting->first()->images->where('pivot.is_maskot', '=', 0)->first())) src="{{ url('public/img/images/'. $setting->first()->images->where('pivot.is_maskot', '=', 0)->first()->name) }}" @else src="{{ url('public/img/images/'. $images->where('id', '=', 1)->first()->name) }}" @endif alt="" class="img-thumbnail img-responsive">
 							</a>
 						</div>
 					</td>
