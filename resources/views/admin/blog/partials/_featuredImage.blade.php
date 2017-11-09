@@ -3,8 +3,8 @@
 		@foreach($images as $image)	
 			<div class="col-md-2 col-sm-6">
 				<div class="thumbnail">
-					<a data-dismiss='modal' href="javascript:" class="featured-img-link" data-id="{{ $image->id }}" data-name="{{ $image->name }}" >
-						<img class="img-responsive thumbnail-img" src="{{ url($image->path . $image->name) }}" alt="{{ $image->name }}">
+					<a data-dismiss='modal' href="javascript:" class="featured-img-link" data-id="{{ $image->id }}" data-name="{{ url($image->path) }}" >
+						<img class="img-responsive thumbnail-img" src="{{ url($image->path) }}" alt="{{ $image->name }}">
 					</a>
 				</div>
 			</div>

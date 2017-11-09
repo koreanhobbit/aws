@@ -9,7 +9,7 @@ class Websitesocmed extends Model
     protected $table = 'websitesocmeds';
 
     protected $fillable = [
-    	'name', 'link',
+    	'name', 'link', 'slug', 'icon', 'setting_id',
     ];
 
 }

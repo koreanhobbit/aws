@@ -76,7 +76,7 @@
                 @foreach($members as $member)
                     <div class="col-sm-4">
                         <div class="team-member">
-                            <a href="{{ $member->name }}" data-toggle="modal" data-target="#member{{ $member->id }}"><img src="{{ url($member->images->first()->path . $member->images->first()->name) }}" class="img-responsive img-circle" alt="" style="height: 239px; width:239px;"></a>
+                            <a href="{{ $member->name }}" data-toggle="modal" data-target="#member{{ $member->id }}"><img src="{{ asset($member->images->first()->path) }}" class="img-responsive img-circle" alt="" style="height: 239px; width:239px;"></a>
                             <h4>{{ ucfirst($member->name) }}</h4>
                             <p class="text-muted">{{ $member->job_title }}</p>
                             <ul class="list-inline social-buttons">

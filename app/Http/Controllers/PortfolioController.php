@@ -120,7 +120,7 @@ class PortfolioController extends Controller
         if(!empty($request->galleryimg)) {
             foreach($request->galleryimg as $item) {
                 $gallery = Image::find($item);
-                $gallery = $portfolio->images()->attach($gallery, ['is_maskot' => 0]);
+                $gallery = $pf->images()->attach($gallery, ['is_maskot' => 0]);
             }
         }
 

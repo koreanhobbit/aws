@@ -29,8 +29,8 @@
 			{{-- click .featured-image-link --}}
 				$('.featured-img-link').click(function() {
 					var name = $(this).data('name');
-					var src = "{{ url('public/img/images') }}" + "/" + name;
-					$('#remove-fm img').attr('src',src);
+				
+					$('#remove-fm img').attr('src',name);
 					$('#set-featured-img').hide();
 					$('#remove-fm').show();
 					$('#featured-image').val($(this).data('id'));
@@ -47,7 +47,7 @@
 
 			// add gallery click button
 				$('#addgallery-btn').click(function() {
-					url = "{{ url('public/img/images') }}";
+					
 					if($(".gallerydisplay").length) {
 						$.each($('.selected'), function (index, value) {
 							var selected = $(this).children().data('id');
@@ -58,14 +58,14 @@
 								}
 							});
 							if(!selfSelected.hasClass('doubleData')) {
-								$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'> <img src='" + url + "/" + $(this).children().data('name') + "' class='img-responsive gal-img'> <div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
+								$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'> <img src='" + $(this).children().data('name') + "' class='img-responsive gal-img'> <div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
 							}
 						});
 					}
 
 					if(!$(".gallerydisplay").length) {
 						$.each($('.selected'), function (index, value) {
-							$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'> <img src='" + url + "/" + $(this).children().data('name') + "' class='img-responsive gal-img'> <div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
+							$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'> <img src='" + $(this).children().data('name') + "' class='img-responsive gal-img'> <div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
 						});
 					}
 

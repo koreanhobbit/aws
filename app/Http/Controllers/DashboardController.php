@@ -9,6 +9,7 @@ use App\Mail\EmailResponse;
 use App\blogpost;
 use App\Portfolio;
 use App\teamprofile;
+use App\Setting;
 
 class DashboardController extends Controller
 {
@@ -19,6 +20,7 @@ class DashboardController extends Controller
     }
     
     public function index(Request $request) {
+        $setting = Setting::find(1);
     	$messagesCount = Contact::orderBy('id', 'desc')->get();
         $blogCount = blogpost::count();
         $portfolioCount = Portfolio::count();
@@ -26,10 +28,10 @@ class DashboardController extends Controller
         $messages = Contact::where('status', '=', 0)->orderBy('id', 'desc')->simplePaginate(5, ['*'], 'messages');
 
     	if ($request->ajax()) {
-    		return view('admin.home.partials._timeline', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount'))->render();
+    		return view('admin.home.partials._timeline', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting'))->render();
     	}
 
-    	return view('admin.home.index', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount')); 
+    	return view('admin.home.index', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting')); 
     }
 
     public function allMessages(Request $request) {

@@ -74,7 +74,7 @@
 						<div class="row" id="gallerycontainer">
 							
 						</div>
-						<a href="#image-gallery" data-toggle="modal" data-target="#image-gallery" id="addGalleryImages" data-urlgi="">Add Gallery Images</button></a>
+						<a href="#image-gallery" data-toggle="modal" data-target="#image-gallery" id="addGalleryImages" data-urlfi="{{ route('portfolio.reload') }}" data-urlgi="{{ route('portfolio.reload.gallery') }}">Add Gallery Images</button></a>
 					@endslot
 				@endcomponent
 			</div>

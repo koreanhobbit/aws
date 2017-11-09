@@ -75,15 +75,15 @@
 									@foreach($blog->images as $feat)
 										@if($feat->pivot->is_maskot == 1)
 											<div class="thumbnail">
-												<img src="{{ asset($feat->path.$feat->name) }}" alt="{{ $feat->name }}" class="img-responsive thumbnail-img">
+												<img src="{{ url($feat->path) }}" alt="{{ $feat->name }}" class="img-responsive thumbnail-img">
 											</div>
+											<input type="hidden" name="featuredimage" id="featured-image" value="{{ $feat->id }}">
 										@endif
 									@endforeach
 									<div class="text-center">
 										<a href="javascript:" class="btn btn-warning">Remove Featured Image</a>
 									</div>
 								</div>
-								<input type="hidden" name="featuredimage" id="featured-image" value="{{ $blog->image_id }}">
 							@endslot
 						@endcomponent
 					</div>
@@ -97,7 +97,7 @@
 									@foreach($blog->images as $blog)
 										@if($blog->pivot->is_maskot == 0)
 											<div class="thumbnail col-sm-6 gallerydisplay" data-id="{{ $blog->id }}">
-												<img src="{{ asset($blog->path.$blog->name) }}" alt="{{ $blog->name }}" class="img-responsive gal-img">
+												<img src="{{ url($blog->path) }}" alt="{{ $blog->name }}" class="img-responsive gal-img">
 												<div class="remove-img">
 													<i class="fa fa-remove"></i>
 												</div>

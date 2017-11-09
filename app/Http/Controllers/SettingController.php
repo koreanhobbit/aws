@@ -28,7 +28,7 @@ class SettingController extends Controller
     	$this->validate($request, $this->rules);
     	foreach(Websitesocmed::get() as $item) {
     		$this->validate($request, [
-    			$item->name => ['required'],
+    			$item->slug => ['required'],
     		]);
     	}
 
@@ -37,7 +37,7 @@ class SettingController extends Controller
     	$set->save();
 
     	foreach($set->websitesocialmedias as $item) {
-    		$socmed = $item->name;
+    		$socmed = $item->slug;
     		if(!empty($request->$socmed)) {
     			$item->link = $request->$socmed;
     			$item->save();

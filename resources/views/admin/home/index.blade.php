@@ -2,6 +2,14 @@
 
 @section('page_heading','Dashboard')
 
+@if(count($setting->images))
+    @foreach($setting->images as $item)
+        @if($item->pivot->is_maskot == 0)     
+            @section('siteIcon', asset($item->path))
+        @endif
+    @endforeach
+@endif
+
 @section('section')
 {{ csrf_field() }}
     <!-- /.row -->

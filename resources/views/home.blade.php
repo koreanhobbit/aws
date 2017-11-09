@@ -5,11 +5,9 @@
     @if(count($setting->images))
         @foreach($setting->images as $item)
             @if($item->pivot->is_maskot == 0)     
-                @section('siteIcon', asset($item->path . $item->name))
+                @section('siteIcon', asset($item->path))
             @endif
         @endforeach
-    @else
-        @section('siteIcon', asset('storage/images/noimg.png'))   
     @endif
 @endforeach
 

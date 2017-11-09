@@ -184,7 +184,6 @@
 			});
 
 			$('#addGalleryBtn').click(function() {
-				url = "{{ asset('storage/images/') }}";
 				if($('.gallerydisplay').length) {
 					$.each($('.selected'), function(index, value) {
 						selected = $(this).children().data('id');
@@ -195,14 +194,14 @@
 							}
 						});
 						if(!selfSelected.hasClass('doubleData')) {
-							$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'><img src='" + url + "/" + $(this).children().data('name') + "' class='img-responsive gal-img img-thumbnail'><div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
+							$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'><img src='" + $(this).children().data('name') + "' class='img-responsive gal-img img-thumbnail'><div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
 						}
 					});
 				}
 
 				if(!$('.gallerydisplay').length) {
 					$.each($('.selected'), function(index, value) {
-						$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'><img src='" + url + "/" + $(this).children().data('name') + "' class='img-responsive gal-img img-thumbnail'><div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
+						$('#gallerycontainer').append("<div class='thumbnail col-sm-6 gallerydisplay' data-id='" + $(this).children().data('id') + "'><img src='" + $(this).children().data('name') + "' class='img-responsive gal-img img-thumbnail'><div class='remove-img'><i class='fa fa-remove'></i></div> <input type='hidden' name='galleryimg[" + $(this).children().data('id') + "]' value='" + $(this).children().data('id') + "'> </div>");
 					});
 				}
 
@@ -238,11 +237,11 @@
 			$('.removeFeaturedImage').hide();
 			$('.portfolio-featured-image').on('click', function() {
 				var name = $(this).data('name');
-				var src = "{{ asset('storage/images') }}" + "/" + name;
+				
 				var id = $(this).data('id');
 				$('#addFeaturedImage').hide();
 				$('.removeFeaturedImage a').attr('data-id',id)
-				$('.removeFeaturedImage img').attr('src',src);
+				$('.removeFeaturedImage img').attr('src',name);
 				$('.removeFeaturedImage').show();
 				$('.submitBtn').attr('data-id', id);
 			});
@@ -360,8 +359,113 @@
 						ajaxUpdatePortfolio(urlUpdate);
 						chooseGalleryImages();
 						removeGalleryImages();
+
+
+						//add dropdown functionality
+						$('#addFeaturedImage').on('click', function() {
+							var urlfi = $(this).data('urlfi');
+							var urlgi = $(this).data('urlgi');
+							Dropzone.autoDiscovery = false;
+							//configure the logo dropzone
+							$("form#featuredImageDz").dropzone({
+								acceptedFiles: "image/*",
+								addRemoveLinks: true,
+								success: function(file, response) {
+									//update featured image list
+									$.ajax({
+										type:"POST",
+										url:urlfi,
+										data:{
+											'_token': $('input[name=_token]').val(),
+										},
+										success: function(data) {
+											$('#featuredImageTab').html(data);
+											$('#featuredImageTab').addClass('active in');
+											$('#uploadFeaturedImageTab').removeClass('active in');
+											$('#featuredImageList').addClass('active');
+											$('#uploadFeaturedImageList').removeClass('active');
+											chooseFeaturedImage();
+										},
+									});
+
+
+									//update gallery image list
+									$.ajax({
+										type:"POST",
+										url:urlgi,
+										data:{
+											'_token': $('input[name=_token]').val(),
+										},
+										success: function(data) {
+											$('#listGalleryImageTab').html(data);
+											$('#listGalleryImageTab').addClass('active in');
+											$('#uploadGalleryImageTab').removeClass('active in');
+											$('#listGalleryImage').addClass('active');
+											$('#uploadGalleryImage').removeClass('active');
+											chooseGalleryImages();
+										},
+									});
+								},
+							});
+						});
+
+
+						//add gallery images pressed
+						$('#addGalleryImages').on('click', function() {
+							Dropzone.autoDiscovery = false;
+							var urlfi = $(this).data('urlfi');
+							var urlgi = $(this).data('urlgi');
+							
+
+							//configure the logo dropzone
+							$("form#galleryImagesDz").dropzone({
+								acceptedFiles: "image/*",
+								addRemoveLinks: true,
+								success: function(file, response) {
+									//update featured image list
+									$.ajax({
+										type:"POST",
+										url:urlfi,
+										data:{
+											'_token': $('input[name=_token]').val(),
+										},
+										success: function(data) {
+											$('#featuredImageTab').html(data);
+											$('#featuredImageTab').addClass('active in');
+											$('#uploadFeaturedImageTab').removeClass('active in');
+											$('#featuredImageList').addClass('active');
+											$('#uploadFeaturedImageList').removeClass('active');
+											chooseFeaturedImage();
+										},
+									});
+
+
+									//update gallery image list
+									$.ajax({
+										type:"POST",
+										url:urlgi,
+										data:{
+											'_token': $('input[name=_token]').val(),
+										},
+										success: function(data) {
+											$('#listGalleryImageTab').html(data);
+											$('#listGalleryImageTab').addClass('active in');
+											$('#uploadGalleryImageTab').removeClass('active in');
+											$('#listGalleryImage').addClass('active');
+											$('#uploadGalleryImage').removeClass('active');
+											chooseGalleryImages();
+										},
+									});
+
+								},
+							});
+						});
+
+
 					},
 				});
+
+				clearMessage();
 			});
 		}
 
@@ -370,11 +474,10 @@
 			$('#addFeaturedImage').hide();
 			$('.portfolio-featured-image').on('click', function() {
 				var name = $(this).data('name');
-				var src = "{{ asset('storage/images') }}" + "/" + name;
 				var id = $(this).data('id');
 				$('#addFeaturedImage').hide();
 				$('.removeFeaturedImage a').attr('data-id',id)
-				$('.removeFeaturedImage img').attr('src',src);
+				$('.removeFeaturedImage img').attr('src',name);
 				$('.removeFeaturedImage').show();
 				$('.editBtn').attr('data-id', id);
 			});
@@ -409,7 +512,7 @@
 				});
 
 				$.ajax({
-					type: "PUT",
+					type: "put",
 					url: urlUpdate,
 					data: data,
 					success: function(data) {

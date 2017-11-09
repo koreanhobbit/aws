@@ -2,10 +2,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="The best website developer and business consultant, contact us now!">
     <meta name="author" content="">
 
-    <title>@yield('siteName')</title>
+    <title>@yield('siteName'), The Best Website Developer and Business Consultant. Contact us now!</title>
     
     
     <link rel="icon" type="image/png" href="@yield('siteIcon')">

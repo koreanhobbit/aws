@@ -17,6 +17,7 @@ class CreateWebsiteSocialMedia extends Migration
         Schema::create('websitesocmeds', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->string('icon');
             $table->string('link');
             $table->integer('setting_id')->unsigned();

@@ -113,7 +113,7 @@
                         <a href="{{ "#" . $portfolio->slug }}" class="portfolio-link" data-toggle="modal" data-target="{{ "#" . $portfolio->slug }}"
                             @foreach($portfolio->images as $image)
                                 @if($image->pivot->is_maskot == 1)
-                                    data-link="{{ url($image->path.$image->name) }}"
+                                    data-link="{{ url($image->path) }}"
                                 @endif
                             @endforeach
                             >
@@ -124,7 +124,7 @@
                             </div>
                             @foreach($portfolio->images as $image)
                                 @if($image->pivot->is_maskot == 1)
-                                    <img src="{{ url($image->path . $image->name) }}" class="img-responsive img-rounded" alt="{{ $image->name }}" style="height:260px; width: 360px;">
+                                    <img src="{{ url($image->path) }}" class="img-responsive img-rounded" alt="{{ $image->name }}" style="height:260px; width: 360px;">
                                 @endif
                             @endforeach
                         </a>

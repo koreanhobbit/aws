@@ -42,13 +42,15 @@ class ImageController extends Controller
 
         $file = $request->file('file');
         $filename = uniqid() . '_' . $file->getClientOriginalName();
-        $image->path = 'img/images/';
+        //$image->path = 'img/images/';
         $image->name = $filename;
         $image->size = $file->getClientSize();
         $image->type = $file->getClientMimeType();
         $image->user_id = Auth::id();
+        $file->storeAs('public/images', $filename);
+        $path = 'storage/images/' . $filename;
+        $image->path = $path;
         $image->save();
-        $file->move($image->path, $filename);
         session()->flash('message', 'Image Added Successfully');
         return $image;
     }
@@ -116,7 +118,7 @@ class ImageController extends Controller
             return redirect('admin/image');
         }
 
-        Storage::delete($image->path.$image->name);
+        Storage::delete('public/images/' . $image->name);
         $image->delete();
 
        session()->flash('message', 'Image Deleted Successfully');

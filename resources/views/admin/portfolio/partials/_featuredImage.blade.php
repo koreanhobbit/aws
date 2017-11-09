@@ -2,9 +2,9 @@
 	@if($images->first())
 		@foreach($images as $image)
 			<div class="col-md-2 col-sm-6">
-				<a href="javascript:" data-dismiss="modal" data-name="{{ $image->name }}" data-id="{{ $image->id }}" class="portfolio-featured-image">
+				<a href="javascript:" data-dismiss="modal" data-name="{{ url($image->path) }}" data-id="{{ $image->id }}" class="portfolio-featured-image">
 					<div class="thumbnail">
-						<img class="img-responsive thumbnail-img"	src="{{ url($image->path . $image->name) }}" alt="{{ $image->name }}">
+						<img class="img-responsive thumbnail-img"	src="{{ url($image->path) }}" alt="{{ $image->name }}">
 					</div>
 				</a>
 			</div>

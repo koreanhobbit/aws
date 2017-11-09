@@ -19,20 +19,20 @@
                                     @if(!empty($portfolio->link)) <p class="item-intro text-muted"><span><a href="{{ $portfolio->link }}" target="_blank">{{ $portfolio->link }}</a></span></p> @else <br> <br> @endif
                                     @foreach($portfolio->images as $image)
                                         @if($image->pivot->is_maskot == 1)
-                                            <img class="img-responsive img-centered main-img" src="{{ url($image->path . $image->name) }}" alt="">
+                                            <img class="img-responsive img-centered main-img" src="{{ url($image->path) }}" alt="">
                                         @endif
                                      @endforeach
                                     <div class="row">    
                                         @foreach($portfolio->images->sortBy('id') as $image)                                
                                             @if($image->pivot->is_maskot == 1)    
                                                 <div class="col-md-2 col-sm-4 col-xs-4">
-                                                    <a href="javascript:" class="img-gallery main-img-gallery" data-url="{{ url($image->path . $image->name) }}"> <img src="{{ url($image->path . $image->name) }}" alt="" class="img-responsive img-thumbnail selected_img" style="height: 110px;min-height: 110px;"></a>
+                                                    <a href="javascript:" class="img-gallery main-img-gallery" data-url="{{ url($image->path) }}"> <img src="{{ url($image->path) }}" alt="" class="img-responsive img-thumbnail selected_img" style="height: 110px;min-height: 110px;"></a>
                                                 </div>    
                                             @endif
                                             @if($image->pivot->is_maskot == 0)    
                                                 <div class="col-md-2 col-sm-4 col-xs-4">
                                                    
-                                                    <a href="javascript:" class="img-gallery" data-url="{{ url($image->path . $image->name) }}"> <img src="{{ url($image->path . $image->name) }}" alt="" class="img-responsive img-thumbnail" style="height: 110px;min-height: 110px;"></a>
+                                                    <a href="javascript:" class="img-gallery" data-url="{{ url($image->path) }}"> <img src="{{ url($image->path) }}" alt="" class="img-responsive img-thumbnail" style="height: 110px;min-height: 110px;"></a>
                                                     
                                                 </div>    
                                             @endif

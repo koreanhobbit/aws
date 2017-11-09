@@ -14,7 +14,7 @@ class ImagesTableSeeder extends Seeder
         DB::table('images')->insert([
         		'name'=>'noimg.png',
         		'size'=>9999,
-        		'path'=>'storage/images/',
+        		'path'=>'img/noimg.png',
         		'type'=>'image/png',
                 'user_id' => '1',
         		'created_at'=> new \DateTime(),
