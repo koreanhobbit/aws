@@ -1,9 +1,9 @@
 @component('mail::message')
-# Hello
+# Hello {{ ucfirst($rp->name) }}
 
 Thanks for contacting us Top Web Studio.
 
-{{ ucfirst($response->response) }}
+{{ ucfirst($rp->response) }}
 
 
 Thanks,<br>

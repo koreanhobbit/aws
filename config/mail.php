@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'topwebstudio.id@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Top Web Studio'),
+        'address' => env('MAIL_FROM_ADDRESS', 'astrowebstudio@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Astro Web Studio'),
     ],
 
     /*

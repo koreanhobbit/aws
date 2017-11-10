@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Contact;
 
 class EmailResponse extends Mailable
 {
@@ -17,9 +18,12 @@ class EmailResponse extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $rp;
+
+    public function __construct(Contact $rp)
     {
-        //
+        $this->rp = $rp;
     }
 
     /**
@@ -27,9 +31,8 @@ class EmailResponse extends Mailable
      *
      * @return $this
      */
-    public function build(Request $request)
+    public function build()
     {
-        return $this->markdown('emails.responsemail')
-        ->with('response', $request);
+        return $this->markdown('emails.responsemail');
     }
 }
