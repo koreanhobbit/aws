@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('/') }}">Top Web Studio</a>
+                <a class="navbar-brand" href="{{ url ('/') }}">{{ config('app.name') }}</a>
             </div>
             <!-- /.navbar-header -->
             
