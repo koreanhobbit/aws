@@ -18,7 +18,7 @@
                             <br>
                             <br>                
                             <p class="text-justify">    
-                                Top Web Studio operates http://topwebstudio.com. This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Site.
+                                Astroweb Studio operates www.astrowebstudio.com. This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Site.
 
                                 We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance with this policy.
                             </p>
