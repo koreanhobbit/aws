@@ -38,8 +38,8 @@
                                     <div class="col-xs-12">
                                         @php
                                             $string = ucfirst(strip_tags($post->post));
-                                            if(strlen(strip_tags($post->post)) > 150) {
-                                                $stringCut= substr(strip_tags($post->post), 0, 150);
+                                            if(strlen(strip_tags($post->post)) > 100) {
+                                                $stringCut= substr(strip_tags($post->post), 0, 100);
                                                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
                                             }
                                         @endphp

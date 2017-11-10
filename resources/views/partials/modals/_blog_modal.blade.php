@@ -40,7 +40,15 @@
                                     @endforeach
                                 </div>
                                                                
-                                <p class="text-justify">{{ ucfirst(strip_tags($post->post)) }}</p>
+                                <div class="text-justify">{!! $post->post !!}
+                                    <br>
+                                    @if(!empty($post->source))
+                                        <a href="{{ $post->source }}" target="_blank">
+                                            <p><span><i class="fa fa-newspaper-o">&nbsp;</i></span> Source</p>
+                                        </a>
+                                    @endif
+                                </div>                                
+                                
                                 <ul class="list-inline">
                                     <li><span><i class="fa fa-user"></i></span> {{ ucfirst($post->user->name) }}</li>
                                     <li><span><i class="fa fa-calendar"></i></span> {{ $post->created_at->diffForHumans() }}</li>

@@ -38,7 +38,7 @@
                                             @endif
                                         @endforeach
                                     </div>
-                                    <p>{{ ucfirst(strip_tags($portfolio->description)) }}</p>
+                                    <p>{!! $portfolio->description !!}</p>
                                     <ul class="list-inline">
                                         <li><span><i class="fa fa-calendar"></i> &nbsp;{{ $portfolio->updated_at->diffForHumans() }}</span></li>
                                         <li><span><i class="fa fa-list-alt"></i>&nbsp;{{ $portfolio->category->category }}</span></li>
