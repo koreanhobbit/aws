@@ -116,9 +116,9 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>We Help
-                                    <br>Building Your
-                                    <br>Dreams!</h4>
+                                <h4>We Are
+                                    <br>Here for
+                                    <br>You!</h4>
                             </div>
                         </li>
                     </ul>
