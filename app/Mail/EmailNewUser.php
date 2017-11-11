@@ -19,11 +19,13 @@ class EmailNewUser extends Mailable
      */
     public $profile;
     public $pass;
+    public $url;
 
     public function __construct(User $profile, $pass)
     {
         $this->profile = $profile;
         $this->pass = $pass;
+        $this->url = route('login');
     }
 
     /**
