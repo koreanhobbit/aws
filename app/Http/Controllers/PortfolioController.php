@@ -12,7 +12,7 @@ use App\PortfolioCategory;
 class PortfolioController extends Controller
 {
 	protected $rules = [
-		'title' => ['required', 'min:2'],
+		'title' => ['required', 'min:2', 'max:30'],
 		'slug' => ['required', 'alpha_dash', 'unique:portfolios,slug'],
 		'description' => ['required'],
         'link' => ['nullable', 'url'],
@@ -88,7 +88,7 @@ class PortfolioController extends Controller
 
     public function update(Request $request, Portfolio $pf) {
         $this->validate($request, [
-                'title' => ['required', 'min:2'],
+                'title' => ['required', 'min:2','max:30'],
                 'slug' => ['required', Rule::unique('portfolios')->ignore($pf->id)],
                 'description' => ['required'],
                 'link' => ['nullable', 'url'],

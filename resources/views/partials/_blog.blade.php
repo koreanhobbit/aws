@@ -51,7 +51,7 @@
                             <div class="panel-footer">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ url($imagePath) }}" class="blog-modal-link">Read Details <span class="
+                                        <a href="" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ url($imagePath) }}" class="blog-modal-link">Read Details <span class="
                                             pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     </div>
                                 </div>

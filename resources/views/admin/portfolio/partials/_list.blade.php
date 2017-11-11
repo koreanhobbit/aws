@@ -45,7 +45,7 @@
 												</div>
 											</td>
 											<td>{{ $portfolio->title }}</td>
-											<td>{{ ucfirst(strip_tags($portfolio->description)) }}</td>
+											<td>{{ strip_tags($portfolio->description) }}</td>
 											<td><a href="{{ $portfolio->link }}" target="_blank">{{ $portfolio->link }}</a></td>
 											<td>
 												<a href="javascript:" class="editBtn" data-urlEdit="{{ route('portfolio.edit', ['pf' => $portfolio->id]) }}" data-urlUpdate="{{ route('portfolio.update', ['pf' => $portfolio->id]) }}">
