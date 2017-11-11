@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hello {{ ucfirst($rp->name) }}
 
-Thanks for contacting us Top Web Studio.
+Thanks for contacting us {{ config('app.name') }}.
 
 {{ ucfirst($rp->response) }}
 
