@@ -8,5 +8,6 @@
 		@yield('modals')
 		@include('includes._footer')
 		@yield('script')
+		@include('includes._chat')
 	</body>
 </html>
