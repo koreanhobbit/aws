@@ -48,7 +48,7 @@ Route::group(['prefix' => 'admin' ,'middleware' => 'auth'], function() {
 	//route for teamprofile
 	Route::get('/teamprofile/{tp}/myprofile', 'TeamProfileController@myprofile')->name('teamprofile.myprofile');
 	Route::get('/teamprofile/{tp}/edit', 'TeamProfileController@edit')->name('teamprofile.edit')->middleware('can:super-admin');
-	Route::put('/teamprofile/{tp}', 'TeamProfileController@update')->name('teamprofile.update')->middleware('can:super-admin');
+	Route::put('/teamprofile/{tp}', 'TeamProfileController@update')->name('teamprofile.update');
 	Route::delete('/teamprofile/{tp}', 'TeamProfileController@destroy')->name('teamprofile.destroy')->middleware('can:super-admin');
 	Route::post('/teamprofile/reload', 'TeamProfileController@reloadImageList')->name('teamprofile.reload')->middleware('can:super-admin');
 	Route::post('/teamprofile', 'TeamProfileController@store')->name('teamprofile.store')->middleware('can:super-admin');

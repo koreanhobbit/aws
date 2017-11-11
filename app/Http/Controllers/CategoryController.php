@@ -13,6 +13,12 @@ class CategoryController extends Controller
 		'categorySlug' => ['required', 'alpha_dash'],
 	];
 
+
+    public function __construct() 
+    {
+        
+    }
+
     public function index(Request $request) {
     	$cats = blogcategory::orderBy('id', 'asc')->simplePaginate(10,['*'],'categorypage');
 
