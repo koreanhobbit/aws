@@ -83,6 +83,7 @@ Route::group(['prefix' => 'admin' ,'middleware' => 'auth'], function() {
 	
 	Route::put('/dashboard/{rp}', 'DashboardController@updateContact')->name('dashboard.update');
 	Route::get('/dashboard/messages/{rp}/reply', 'DashboardController@reply')->name('dashboard.reply');
+	Route::delete('/dashboard/{cr}', 'DashboardController@destroyContact')->name('dashboard.delete')->middleware('can:super-admin');
 	Route::get('/dashboard/messages', 'DashboardController@allMessages')->name('dashboard.messages');
 	Route::get('/', 'DashboardController@index')->name('dashboard.index');
 });

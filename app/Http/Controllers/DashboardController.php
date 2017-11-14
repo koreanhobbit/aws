@@ -24,25 +24,27 @@ class DashboardController extends Controller
     	$messagesCount = Contact::orderBy('id', 'desc')->get();
         $blogCount = blogpost::count();
         $portfolioCount = Portfolio::count();
+        $dashboard = true;
         $memberCount = teamprofile::count();
         $messages = Contact::where('status', '=', 0)->orderBy('id', 'desc')->simplePaginate(5, ['*'], 'messages');
 
     	if ($request->ajax()) {
-    		return view('admin.home.partials._timeline', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting'))->render();
+    		return view('admin.home.partials._timeline', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting', 'dashboard'))->render();
     	}
 
-    	return view('admin.home.index', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting')); 
+    	return view('admin.home.index', compact('messagesCount', 'messages', 'blogCount', 'portfolioCount', 'memberCount', 'setting', 'dashboard')); 
     }
 
     public function allMessages(Request $request) {
         $messagesCount = Contact::orderBy('id', 'desc')->get();
         $messages = Contact::orderBy('id', 'desc')->simplePaginate(5, ['*'], 'messages');
+        $dashboard =false;
 
         if ($request->ajax()) {
-            return view('admin.home.partials._timeline', compact('messages'))->render();
+            return view('admin.home.partials._timeline', compact('messages', 'messagesCount', 'dashboard'))->render();
         }
 
-        return view('admin.home.index', compact('messagesCount', 'messages'));
+        return view('admin.home.index', compact('messagesCount', 'messages', 'dashboard'));
     }
 
     public function reply(Request $request, Contact $rp) {
@@ -60,4 +62,11 @@ class DashboardController extends Controller
 
         return view('admin.home.partials._reply', compact('rp'))->render();
     }
+
+    public function destroyContact(Contact $cr) {
+        $cr->delete();
+        //session()->flash('message', 'The message deleted successfully');
+        return redirect()->route('dashboard.index')->with('message', 'Message is successfully deleted');
+    }
+
 }

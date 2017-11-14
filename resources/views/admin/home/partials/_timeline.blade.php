@@ -1,7 +1,13 @@
 @if (!count($messages))
-    <div class="alert alert-info">
-        <h3>No Recent Activities</h3>
-    </div>
+    @if($dashboard == true)
+        <div class="alert alert-info">
+            <h3>No Recent Activities</h3>
+        </div>
+    @else
+        <div class="alert alert-info">
+            <h3>There is no message</h3>
+        </div>
+    @endif
 @else
     <ul class="timeline">
         @foreach($messages as $key => $message)

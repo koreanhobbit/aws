@@ -15,6 +15,7 @@
 			//message details and reply button
 			function replyMessage() {
 				$('.reply').on('click', function() {
+					clearMessage();
 					$('.panel-title').text('Reply Message');
 					var url = $(this).data('url');
 					$.ajax({
@@ -74,7 +75,9 @@
 			//function for pagination link
 			function paginationLink() {
 				$('body').on('click', '.pagination a', function(e) {
+					clearMessage();
 					e.preventDefault();
+					clearMessage();
 					var url = $(this).attr('href');
 					ajaxPagination(url);
 					window.history.pushState("","", url);
@@ -119,6 +122,10 @@
 
 					});
 				});
+			}
+
+			function clearMessage() {
+				$('.message').remove();
 			}
 		});
 	</script>

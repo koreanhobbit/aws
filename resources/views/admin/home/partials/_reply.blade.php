@@ -43,6 +43,18 @@
 		</div>
 	</div>
 </div>
+<br>
+@can('super-admin')
+	<div class="row">
+		<div class="col-sm-offset-3 col-sm-6">
+			<form action="{{ route('dashboard.delete', ['cr' => $rp->id]) }}" method='post'>
+				{{ csrf_field() }}
+				{{ method_field("DELETE") }}
+				<a href="javascript:" class="" onclick="confirm('Are you sure want to delete this message?')"><button class="btn btn-primary form-control">Delete</button></a>
+			</form>
+		</div>
+	</div>
+@endcan
 @if ($rp->status == 0)
 	<br>
 	<hr>
@@ -54,7 +66,7 @@
 				<label for="reply_text">Reply Message</label>
 				<textarea id="reply_text" name="reply_text"></textarea>
 			</div>
-
+			
 			<div class="pull-right">
 				<a href="javascript:" class="responseBtn" data-url="{{ route('dashboard.update', ['rp' => $rp->id]) }}"><button class="btn btn-primary">Send</button></a>
 			</div>

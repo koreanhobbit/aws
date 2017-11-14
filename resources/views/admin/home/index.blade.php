@@ -97,6 +97,11 @@
             </div>
         </div>
         <!-- /.row -->
+        @if(session('message'))
+            <div class="alert alert-success message">
+                <h4>{{ session('message') }}</h4>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 @component('admin.widgets.panel')

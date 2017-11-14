@@ -283,6 +283,7 @@
 						//calling button function portfolio
 						editButton();
 						addPortfolio();
+						chooseGalleryImages();
 						deleteBtn();
 						paginationLink();
 					},
