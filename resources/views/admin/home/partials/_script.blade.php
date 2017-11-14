@@ -87,6 +87,7 @@
 			//message all message function 
 			function allMessages() {
 				$('.message_details').on('click', function() {
+					clearMessage();
 					var url = $(this).data('url');
 					$.ajax({
 						url:url,
