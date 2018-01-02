@@ -27,7 +27,7 @@
                                 	<div class="row">
                                         <div class="col-xs-12">
                                         	<h2 class="text-center" style="background-color: lightblue">
-                                        		{{ 'Rp. ' . number_format($product->price, 0, ',', '.') }}/Month
+                                        		{{ '$ ' . number_format($product->price, 0, '.', ',') }}/Month
                                         	</h2>
                                             @foreach($product->parameters as $par)
                                             	<h5 class="text-center">
