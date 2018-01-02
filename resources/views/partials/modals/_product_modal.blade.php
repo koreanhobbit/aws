@@ -30,7 +30,7 @@
                                             </div>
                                         @elseif($image->pivot->is_maskot == 0)    
                                             <div class="col-md-2 col-sm-4 col-xs-4">
-                                                <a href="javascript:" class="img-gallery" data-url=""> <img src="{{ url($image->path) }}" alt="" class="img-responsive img-thumbnail" style="height: 110px;min-height: 110px;"></a>
+                                                <a href="javascript:" class="img-gallery" data-url="{{ url($image->path) }}"> <img src="{{ url($image->path) }}" alt="" class="img-responsive img-thumbnail" style="height: 110px;min-height: 110px;"></a>
                                             </div>
                                         @endif    
                                     @endforeach

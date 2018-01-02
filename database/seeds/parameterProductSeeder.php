@@ -29,7 +29,7 @@ class parameterProductSeeder extends Seeder
 
         DB::table('parameters')->insert([
         	'name' => 'Style Options',
-        	'id_name' => 'time_product',
+        	'id_name' => 'style_option_product',
         	'placeholder' => 'How many style options are available?',
         	'created_at' => new \DateTime(),
     		'updated_at' => new \DateTime(),
