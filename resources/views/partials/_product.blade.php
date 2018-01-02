@@ -15,7 +15,7 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <a href="{{ $product->slug }}" data-toggle="modal" data-target="#{{ $product->slug }}" data-link="" class="blog-modal-link">
+                                            <a href="{{ $product->slug }}" data-toggle="modal" data-target="#{{ $product->slug }}" data-link="" class="product-modal-link">
                                                 <h5 class="text-center" style="overflow-wrap: break-word;min-height: 20px;">
                                                     {{ $product->name }}
                                                 </h5>
@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                         	<div class="text-center">
-    	                                    	<a href="{{ $product->slug }}" data-target="#{{ $product->slug }}" data-toggle="modal" class="btn btn-primary">
+    	                                    	<a href="{{ $product->slug }}" data-target="#{{ $product->slug }}" data-toggle="modal" class="btn btn-primary product-modal-link">
     	                                    		Get This Package
     	                                    	</a>
                                         	</div>

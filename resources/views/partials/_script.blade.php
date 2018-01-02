@@ -85,7 +85,7 @@
 
         //function for main image link
         function mainImageLink() {
-            $('.blog-modal-link, .portfolio-link').on('click', function() {
+            $('.blog-modal-link, .portfolio-link .product-modal-link').on('click', function() {
                 modalLink = $(this).data('target');
                 imageLink = $(this).data('link');
 
