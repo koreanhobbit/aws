@@ -1,5 +1,5 @@
 {{-- blog grid section --}}
-    <section id="blogs">
+    <section id="blogs" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

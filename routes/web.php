@@ -30,9 +30,16 @@ Route::post('/contact', 'HomeController@contact')->name('home.contact');
 
 Route::group(['prefix' => 'admin' ,'middleware' => 'auth'], function() {
 
-	// // Registration Routes...
-	// Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-	// Route::post('/register', 'Auth\RegisterController@register');
+	//route for products
+	Route::put('/product/{product}', 'ProductController@update')->name('product.update');
+	Route::post('/product/reloadfi', 'ProductController@reloadFeaturedImageList')->name('product.reloadfi');
+	Route::post('/product/reloadgi', 'ProductController@reloadGalleryImageList')->name('product.reloadgi');
+	Route::get('/product/create', 'ProductController@create')->name('product.create');
+	Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
+	Route::post('/product', 'ProductController@store')->name('product.store');
+	Route::get('/product', 'ProductController@index')->name('product.index');
+	Route::delete('/product/{product}', 'ProductController@destroy')->name('product.destroy');
+	Route::put('/product/publish/{product}', 'ProductPublishController@toggleProduct')->name('product.publish');
 
 	//route for setting
 	Route::put('/setting/{set}', 'SettingController@update')->name('setting.update')->middleware('can:super-admin');

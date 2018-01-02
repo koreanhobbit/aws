@@ -93,11 +93,24 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-bag fa-fw"></i> Products<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*product') ? 'class="active"' : '') }}>
+                                    <a href="{{ route('product.index') }}">All Products</a>
+                                </li>
+                                <li {{ (Request::is('*product/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ route('product.create') }}">Add New</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                         
                         <li>
                             <a href=""><i class="fa fa-user fa-fw"></i> Team Profiles<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                 <li {{ (Request::is('/teamprofile') ? 'class="active"' : '') }}>
+                                 <li {{ (Request::is('*teamprofile') ? 'class="active"' : '') }}>
                                     <a href="{{ route('teamprofile.index') }}">All Profiles</a>
                                 </li>
                             </ul>
@@ -139,6 +152,4 @@
             <!-- /#page-wrapper -->
         </div>
     </div>
-
-    
 @endsection

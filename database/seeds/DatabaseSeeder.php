@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(pivotprofilesosmed::class);
         $this->call(imageableseeder::class);
         $this->call(teamprofileseeder::class);
+        $this->call(CreateProductCategorySeeder::class);
+        $this->call(parameterProductSeeder::class);
     }
 }

@@ -1,6 +1,6 @@
 @if(!count($members))
 <!-- Team Section -->
-    <section id="team">
+    <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -64,7 +64,7 @@
     </section>
 @else
     <!-- Team Section -->
-    <section id="team">
+    <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

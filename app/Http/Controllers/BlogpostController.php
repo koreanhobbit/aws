@@ -38,7 +38,7 @@ class BlogpostController extends Controller
         $posts = blogpost::get();
 
         $posts_perpage = blogpost::with(['user', 'blogcategory'])->orderBy('id','desc')->paginate(5);
-
+        
         $cats = blogcategory::all();
 
         return view('admin.blog.index', compact('posts','posts_perpage', 'cats'));
@@ -67,7 +67,6 @@ class BlogpostController extends Controller
     {
         $post = new blogpost;
         $this->validate($request,$this->rules);
-
         $post->title = $request->title;
         $post->post = $request->post;
         $post->slug = $request->slug;

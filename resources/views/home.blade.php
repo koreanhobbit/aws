@@ -56,12 +56,16 @@
         @include('partials._portfolio')
     </div>
     
+    <div class="product_container">
+        @include('partials._product')
+    </div>
+
     <div id="blogscontainer">
         @include('partials._blog')
 	</div>
 
 	<!-- About Section -->
-    <section id="about" class="bg-light-gray">
+    <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -131,7 +135,7 @@
     </div>
 
 	<!-- Clients Aside -->
-    <aside class="clients bg-light-gray">
+    <aside class="clients">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -163,7 +167,7 @@
     </div>
 
     {{-- footer section --}}
-    <footer>
+    <footer class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

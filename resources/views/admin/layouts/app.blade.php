@@ -18,14 +18,8 @@
     {{-- summer note css --}}
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
-     @yield('link')
+    @yield('link')
     <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
-
     <style>
         .dropzone{
             border:dashed;

@@ -95,5 +95,64 @@
                 $(modalLink + " " + ".main-img-gallery img").addClass('selected_img');
             });
         }
+
+        //function for product form
+        $("#productForm input").jqBootstrapValidation({
+            preventSubmit: true,
+            submitError: function($form, event, errors) {
+                // additional error messages or events
+            },
+            submitSuccess: function($form, event) {
+                event.preventDefault(); // prevent default submit behaviour
+                // get values from FORM
+                var urlstore = $('form[id=productForm]').data('urlstore');
+                var name = $("input#name_product").val();
+                var email = $("input#email_product").val();
+                var phone = $("input#phone_product").val();
+                var message = $("input#message_product").val();
+                var firstName = name; // For Success/Failure Message
+                // Check for white space in name for Success/Fail message
+                if (firstName.indexOf(' ') >= 0) {
+                    firstName = name.split(' ').slice(0, -1).join(' ');
+                }
+                $.ajax({
+                    url: urlstore,
+                    type: "POST",
+                    data: {
+                        _token: $("input[name=_token]").val(),
+                        name: name,
+                        phone: phone,
+                        email: email,
+                        message: message
+                    },
+                    cache: false,
+                    success: function() {
+                        //Success message
+                        $('#successProduct').html("<div class='alert alert-success'>");
+                        $('#successProduct > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                            .append("</button>");
+                        $('#successProduct > .alert-success')
+                            .append("<strong>Your order has been submitted. </strong>");
+                        $('#successProduct > .alert-success')
+                            .append('</div>');
+                        //clear all fields
+                        $('#productForm').trigger("reset");
+                    },
+                    error: function() {
+                        // Fail message
+                        $('#successProduct').html("<div class='alert alert-danger'>");
+                        $('#successProduct > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                            .append("</button>");
+                        $('#successProduct > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
+                        $('#successProduct > .alert-danger').append('</div>');
+                        //clear all fields
+                        $('#productForm').trigger("reset");
+                    },
+                });
+            },
+            filter: function() {
+                return $(this).is(":visible");
+            },
+        });    
     });
 </script>
