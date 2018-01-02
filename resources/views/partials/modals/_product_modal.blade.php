@@ -38,7 +38,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <p>
-                                            {{ $product->description }}
+                                            {!! $product->description !!}
                                         </p>
                                     </div>
                                 </div>
