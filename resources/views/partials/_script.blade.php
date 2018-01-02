@@ -85,11 +85,11 @@
 
         //function for main image link
         function mainImageLink() {
-            $('.blog-modal-link, .portfolio-link .product-modal-link').on('click', function() {
+            $('.blog-modal-link, .portfolio-link, .product-modal-link').on('click', function() {
                 modalLink = $(this).data('target');
                 imageLink = $(this).data('link');
 
-                // alert(modalLink + imageLink);
+                //alert(modalLink + imageLink);
                 $(modalLink + " " + ".main-img").attr('src', imageLink);
                 $(modalLink + " " + ".img-gallery img").removeClass('selected_img');
                 $(modalLink + " " + ".main-img-gallery img").addClass('selected_img');

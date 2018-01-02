@@ -20,7 +20,7 @@
                                 
                                 @foreach($post->images as $image)
                                     @if($image->pivot->is_maskot == 1)
-                                        <img class="img-responsive img-centered main-img" src="{{ url($image->path) }}" alt="">
+                                        <img class="img-responsive img-centered main-img" src="{{ url($image->path) }}" title="{{ $image->name }}">
                                     @endif
                                  @endforeach
 
