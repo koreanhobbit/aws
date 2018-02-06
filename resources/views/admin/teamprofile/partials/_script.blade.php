@@ -32,7 +32,8 @@
 							$("form#uploadImageForm").dropzone({
 								acceptedFiles: 'image/*',
 								addRemoveLinks: true,
-	            				success: function(file,response) {
+								uploadMultiple: true,
+	            				successmultiple: function(file,response) {
 	                				$.ajax({
 	                					type:"POST",
 	                					url: urlreload,
@@ -146,7 +147,8 @@
 							$("form#uploadImageForm").dropzone({
 								acceptedFiles: 'image/*',
 								addRemoveLinks: true,
-	            				success: function(file,response) {
+								uploadMultiple: true,
+	            				successmultiple: function(file,response) {
 	                				$.ajax({
 	                					type:"POST",
 	                					url: urlreload,

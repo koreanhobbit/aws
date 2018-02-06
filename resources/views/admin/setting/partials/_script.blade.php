@@ -111,7 +111,8 @@
 				$("form#uploadLogoImage").dropzone({
 					acceptedFiles: "image/*",
 					addRemoveLinks: true,
-					success: function(file, response) {
+					uploadMultiple: true,
+					successmultiple: function(file, response) {
 						reloadImage("#logoImageLink", "#uploadLogoImageLink", "#logoImage", "#uploadLogoImage", urllogo);
 						reloadImage("#iconLink", "#uploadIconLink", "#icon", "#uploadIcon", urlicon);
 					}
@@ -125,7 +126,8 @@
 				$("form#uploadIcon").dropzone({
 					acceptedFiles: "image/*",
 					addRemoveLinks: true,
-					success: function(file, response) {
+					uploadMultiple: true,
+					successmultiple: function(file, response) {
 						reloadImage("#logoImageLink", "#uploadLogoImageLink", "#logoImage", "#uploadLogoImage", urllogo);
 						reloadImage("#iconLink", "#uploadIconLink", "#icon", "#uploadIcon", urlicon);
 					}

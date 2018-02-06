@@ -37,7 +37,8 @@
 							$("form#featuredImageDz").dropzone({
 								acceptedFiles: "image/*",
 								addRemoveLinks: true,
-								success: function(file, response) {
+								uploadMultiple: true,
+								successmultiple: function(file, response) {
 									//update featured image list
 									$.ajax({
 										type:"POST",
@@ -88,7 +89,8 @@
 							$("form#galleryImagesDz").dropzone({
 								acceptedFiles: "image/*",
 								addRemoveLinks: true,
-								success: function(file, response) {
+								uploadMultiple: true,
+								successmultiple: function(file, response) {
 									//update featured image list
 									$.ajax({
 										type:"POST",
@@ -371,7 +373,8 @@
 							$("form#featuredImageDz").dropzone({
 								acceptedFiles: "image/*",
 								addRemoveLinks: true,
-								success: function(file, response) {
+								uploadMultiple: true,
+								successmultiple: function(file, response) {
 									//update featured image list
 									$.ajax({
 										type:"POST",
@@ -422,7 +425,8 @@
 							$("form#galleryImagesDz").dropzone({
 								acceptedFiles: "image/*",
 								addRemoveLinks: true,
-								success: function(file, response) {
+								uploadMultiple: true,
+								successmultiple: function(file, response) {
 									//update featured image list
 									$.ajax({
 										type:"POST",

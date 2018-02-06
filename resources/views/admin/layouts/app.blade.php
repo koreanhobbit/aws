@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <base href="http://www.astrowebstudio.com" target="_top"/>
+
     <title>{{ config('app.name', 'Admin Modul') }}</title>
     <link rel="icon" type="image/png" href="">
 

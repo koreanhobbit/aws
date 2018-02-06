@@ -38,21 +38,21 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $image = new Image;
-
-        $file = $request->file('file');
-        $filename = uniqid() . '_' . $file->getClientOriginalName();
-        //$image->path = 'img/images/';
-        $image->name = $filename;
-        $image->size = $file->getClientSize();
-        $image->type = $file->getClientMimeType();
-        $image->user_id = Auth::id();
-        $file->storeAs('public/images', $filename);
-        $path = 'storage/images/' . $filename;
-        $image->path = $path;
-        $image->save();
+        $files = $request->file('file');
+        foreach($files as $file) {
+            $filename = uniqid() . '_' . $file->getClientOriginalName();
+            $image = new Image;
+            //$image->path = 'img/images/';
+            $image->name = $filename;
+            $image->size = $file->getClientSize();
+            $image->type = $file->getClientMimeType();
+            $image->user_id = Auth::id();
+            $file->storeAs('public/images', $filename);
+            $path = 'storage/images/' . $filename;
+            $image->path = $path;
+            $image->save();
+        }
         session()->flash('message', 'Image Added Successfully');
-        return $image;
     }
 
     /**

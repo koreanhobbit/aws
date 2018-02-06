@@ -11,7 +11,8 @@
 			$('#featuredImageDz').dropzone({
 				acceptedFiles: 'image/*',
 				addRemoveLinks: true,
-				success: function() 
+				uploadMultiple: true,
+				successmultiple: function() 
 				{
 					$.ajax({
 						type: "POST",
@@ -79,7 +80,8 @@
 			$('#galleryImageDz').dropzone({
 				acceptedFiles: 'image/*',
 				addRemoveLinks: true,
-				success: function() 
+				uploadMultiple: true,
+				successmultiple: function() 
 				{
 					$.ajax({
 						type: "POST",

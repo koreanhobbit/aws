@@ -26,10 +26,10 @@
         Dropzone.options.addImage = {
             paramName: 'file',
             maxFilesize: 2, // MB
-            maxFiles: 2,
             dictDefaultMessage: 'Drag an image here to upload, or click to select one',
             acceptedFiles: 'image/*',
-            success: function(file,response) {
+            uploadMultiple: true,
+            successmultiple: function(file,response) {
                 window.location = "/admin/image";
             }
         };
