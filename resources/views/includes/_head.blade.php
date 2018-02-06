@@ -1,5 +1,5 @@
 <head>
-
+    <base href="http://www.astrowebstudio.com" target="_top"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="The best website developer and business consultant, contact us now!, website development, website design, app development, app design, start-up, e-commerce, wordpress, company profile, seo, Website, Graphic Design, Web Design, Web Programming, SEO Materi yang diajarkan adalah HTML, CSS, Javascript, Photoshop, PHP, Codeigniter, Ajax, jQuery, Search Engine Optimization, Adobe inDesign,Toko Online, Internet Marketing, Social Media, Facebook, Twitter, dan Online Branding">
