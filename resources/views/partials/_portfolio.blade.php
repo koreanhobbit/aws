@@ -16,7 +16,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/roundicons.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Round Icons</h4>
@@ -30,7 +30,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/startup-framework.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Startup Framework</h4>
@@ -44,7 +44,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/treehouse.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Treehouse</h4>
@@ -58,7 +58,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/golden.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Golden</h4>
@@ -72,7 +72,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/escape.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Escape</h4>
@@ -86,7 +86,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                        <img src="{{ asset('img/portfolio/dreams.png') }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Dreams</h4>

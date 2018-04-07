@@ -78,7 +78,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{{ asset('img/about/1.jpg') }}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -92,7 +92,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{{ asset('img/about/2.jpg') }}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{{ asset('img/about/3.jpg') }}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -140,22 +140,22 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <a href="http://www.laravel.com" target="_blank">
-                        <img src="img/logos/laravel.png" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
+                        <img src="{{ asset('img/logos/laravel.png') }}" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="http://www.codeigniter.com" target="_blank">
-                        <img src="img/logos/codeigniter.png" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
+                        <img src="{{ asset('img/logos/codeigniter.png') }}" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="http://www.wordpress.com" target="_blank">
-                        <img src="img/logos/wordpress.png" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
+                        <img src="{{ asset('img/logos/wordpress.png') }}" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="http://www.digitalocean.com" target="_blank">
-                        <img src="img/logos/digitalocean.png" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
+                        <img src="{{ asset('img/logos/digitalocean.png') }}" class="img-responsive img-centered" alt="" style="width: 250px; height: 50px;">
                     </a>
                 </div>
             </div>
