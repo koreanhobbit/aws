@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	@include('includes._head')
 	<body id="page-top" class="index">
 		@include('includes._navigation')
