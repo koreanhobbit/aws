@@ -26,7 +26,7 @@
                                     @foreach($product->images as $image)
                                         @if($image->pivot->is_maskot == 1)
                                             <div class="col-md-2 col-sm-4 col-xs-4">
-                                                <a href="javascript:" class="img-gallery main-img-gallery" data-url="{{ url($image->path) }}"> <img src="{{ $image->path }}" title="{{ $image->name }}" class="img-responsive img-thumbnail selected_img" style="height: 110px;min-height: 110px;"></a>
+                                                <a href="javascript:" class="img-gallery main-img-gallery" data-url="{{ url($image->path) }}"> <img src="{{ asset($image->path) }}" title="{{ $image->name }}" class="img-responsive img-thumbnail selected_img" style="height: 110px;min-height: 110px;"></a>
                                             </div>
                                         @elseif($image->pivot->is_maskot == 0)    
                                             <div class="col-md-2 col-sm-4 col-xs-4">
