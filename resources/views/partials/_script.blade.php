@@ -1,52 +1,5 @@
 <script>
     $(document).ready(function() {
-
-        //function show modal hash on url
-        hash();
-
-        //function show modal hash on url
-        function hash() {
-            $(window.location.hash).modal('show');
-            $('a[data-toggle="modal"]').click(function() {
-                revertToBeforePaginationUrl();
-                window.location.hash = $(this).attr('href');
-            });
-
-            $('.modal').on('hidden.bs.modal', function () {
-                revertToBeforeModalUrl();
-            });
-        }
-        
-        //function revert to original Url before modal
-        function revertToBeforeModalUrl() {
-            var original = window.location.href.substr(0, window.location.href.indexOf('#'))
-            history.replaceState({}, document.title, original);
-        }
-
-        //function revert to original Url before modal
-        function revertToBeforePaginationUrl() {
-            var original = window.location.href.substr(0, window.location.href.indexOf('?'))
-            history.replaceState({}, document.title, original);
-        }
-
-        $(function() {
-            $('body').on('click', '.pagination a', function(e) {
-                e.preventDefault();
-
-                var url =$(this).attr('href');
-
-                if(url.search("blog") > -1) {
-                    getBlogpost(url);    
-                }
-                
-                galleryImgBtn();
-                mainImageLink();
-
-                window.history.pushState("", "", url);
-            });
-        });
-
-
         //function for blog pagination
         function getBlogpost(url) {
             $.ajax({
@@ -153,6 +106,52 @@
             filter: function() {
                 return $(this).is(":visible");
             },
-        });    
+        }); 
+
+
+        //function show modal hash on url
+        // hash();
+
+        //function show modal hash on url
+        function hash() {
+            $(window.location.hash).modal('show');
+            $('a[data-toggle="modal"]').click(function() {
+                revertToBeforePaginationUrl();
+                window.location.hash = $(this).attr('href');
+            });
+
+            $('.modal').on('hidden.bs.modal', function () {
+                revertToBeforeModalUrl();
+            });
+        }
+        
+        //function revert to original Url before modal
+        function revertToBeforeModalUrl() {
+            var original = window.location.href.substr(0, window.location.href.indexOf('#'))
+            history.replaceState({}, document.title, original);
+        }
+
+        //function revert to original Url before modal
+        function revertToBeforePaginationUrl() {
+            var original = window.location.href.substr(0, window.location.href.indexOf('?'))
+            history.replaceState({}, document.title, original);
+        }
+
+        $(function() {
+            $('body').on('click', '.pagination a', function(e) {
+                e.preventDefault();
+
+                var url =$(this).attr('href');
+
+                if(url.search("blog") > -1) {
+                    getBlogpost(url);    
+                }
+                
+                galleryImgBtn();
+                mainImageLink();
+
+                window.history.pushState("", "", url);
+            });
+        });   
     });
 </script>
