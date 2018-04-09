@@ -16,7 +16,7 @@
     {{-- dropzone css --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.css">
     {{-- summer note css --}}
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
     @yield('link')
     <!-- Scripts -->
@@ -32,7 +32,7 @@
     <script src="{{ asset("js/app.js") }}"></script>
     <script src="{{ asset("js/admin.js") }}"></script>
      {{-- summer note script --}}
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
     {{-- dropzone js link --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
     {{-- lightbox js link --}}
