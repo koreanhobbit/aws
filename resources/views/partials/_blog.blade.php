@@ -12,8 +12,9 @@
                     @foreach($post->images as $image)
                         @if($image->pivot->is_maskot == 1)
                             @php
-                                $imagePath = $image->path;
+                                $imagePath = $image->imageMid->location;
                                 $imageName = $image->name;
+                                $imageLink = $image->imageMid->location;
                             @endphp
                         @endif
                     @endforeach
@@ -27,7 +28,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imagePath) }}" class="blog-modal-link">
+                                        <a href="{{ $post->slug }}" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imageLink) }}" class="blog-modal-link">
                                             <h6 class="text-center" style="overflow-wrap: break-word;min-height: 50px;">{{ $post->title }}</h6>
                                         </a>
                                     </div>
@@ -51,7 +52,7 @@
                             <div class="panel-footer">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a href="" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imagePath) }}" class="blog-modal-link">Read Details <span class="
+                                        <a href="" data-toggle="modal" data-target="#{{ $post->slug }}" data-link="{{ asset($imageLink) }}" class="blog-modal-link">Read Details <span class="
                                             pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
                                     </div>
                                 </div>

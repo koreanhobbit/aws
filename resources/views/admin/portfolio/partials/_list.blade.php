@@ -41,7 +41,7 @@
 											<td>{{ $portfolios->firstItem() + $key }}</td>
 											<td>
 												<div class="thumbnail">
-													<img src="{{ url($portfolio->images()->firstOrFail()->path) }}" alt="" class="img-responsive" style="height:150px; min-height: 150px">
+													<img src="{{ url($portfolio->images()->firstOrFail()->thumbnail->location) }}" alt="" class="img-responsive" style="height:150px; min-height: 150px">
 												</div>
 											</td>
 											<td>{{ $portfolio->title }}</td>

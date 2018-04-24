@@ -53,7 +53,7 @@
 											@foreach($product->images as $image)
 												@if($image->pivot->is_maskot == 1)
 													<div class="thumbnail">
-														<img src="{{ asset($image->path) }}" title="{{ $image->name }}" class="img-responsive thumbnail-img">
+														<img src="{{ asset($image->thumbnail->location) }}" title="{{ $image->name }}" class="img-responsive thumbnail-img">
 													</div>
 												@endif
 											@endforeach

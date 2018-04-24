@@ -11,7 +11,8 @@
         "laravel/tinker": "^1.0",
         "predis/predis": "^1.1",
         "pda/pheanstalk": "v3.1.0",
-        "guzzlehttp/guzzle": "6.3.0"
+        "guzzlehttp/guzzle": "6.3.0",
+        "intervention/image": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

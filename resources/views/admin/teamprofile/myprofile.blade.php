@@ -25,7 +25,7 @@
 								<div class="col-sm-12">
 									<div class="thumbnail">
 										<a href="javascript:" id="teamprofileImage" data-toggle="modal" data-target="#teamprofileModal" data-urlreload="{{ route('teamprofile.reload') }}">
-											<img class="img-responsive" src="{{ url($tp->images()->firstOrFail()->path) }}" alt="" data-imageid="{{ $tp->images()->firstOrFail()->id }}">
+											<img class="img-responsive" src="{{ url($tp->images()->firstOrFail()->thumbnail->location) }}" alt="" data-imageid="{{ $tp->images()->firstOrFail()->id }}">
 											<div class="add-img"><i class="fa fa-plus fa-5x"></i></div>
 										</a>
 									</div>

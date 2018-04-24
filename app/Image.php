@@ -30,4 +30,14 @@ class Image extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
+    public function thumbnail()
+    {
+        return $this->hasOne('App\Thumbnail');
+    }
+
+    public function imageMid()
+    {
+        return $this->hasOne('App\ImageMid');
+    }
+
 }

@@ -37,7 +37,7 @@
 											<td>{{ $users->firstItem() + $key }}</td>
 											<td>
 												<div class="thumbnail">
-													<img src="{{ url($teamprofile->images()->firstOrFail()->path) }}" alt="">
+													<img src="{{ url($teamprofile->images()->firstOrFail()->thumbnail->location) }}" alt="">
 												</div>
 											</td>
 											<td>{{ ucfirst($teamprofile->name) }}</td>

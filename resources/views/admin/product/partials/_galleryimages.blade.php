@@ -3,8 +3,8 @@
 		@foreach($images as $image)
 			<div class="col-md-2 col-sm-6">
 				<div class="thumbnail">
-					<a href="javascript:" class="img-gallery-link" data-id="{{ $image->id }}" data-name="{{ url($image->path) }}">
-						<img class="img-responsive thumbnail-img" src="{{ url($image->path) }}" title="{{ $image->name }}">
+					<a href="javascript:" class="img-gallery-link" data-id="{{ $image->id }}" data-name="{{ url($image->thumbnail->location) }}">
+						<img class="img-responsive thumbnail-img" src="{{ url($image->thumbnail->location) }}" title="{{ $image->name }}">
 					</a>
 				</div>
 			</div>

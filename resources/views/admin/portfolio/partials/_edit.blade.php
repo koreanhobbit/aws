@@ -65,7 +65,7 @@
 							<div class="thumbnail">
 								@foreach($pf->images as $image)
 									@if($image->pivot->is_maskot == 1)
-										<img src="{{ url($image->path) }}" alt="{{ $image->name }}" class="img-responsive">
+										<img src="{{ url($image->thumbnail->location) }}" alt="{{ $image->name }}" class="img-responsive">
 									@endif
 								@endforeach
 							</div>
@@ -83,7 +83,7 @@
 							@foreach($pf->images as $image)
 								@if($image->pivot->is_maskot == 0)
 									<div class="thumbnail col-sm-6 gallerydisplay" data-id="{{ $image->id }}">
-										<img src="{{ url($image->path) }}" alt="{{ $image->name }}" class="img-responsive gal-img img-thumbnail">
+										<img src="{{ url($image->thumbnail->location) }}" alt="{{ $image->name }}" class="img-responsive gal-img img-thumbnail">
 										<div class="remove-img">
 											<i class="fa fa-remove"></i>
 										</div>

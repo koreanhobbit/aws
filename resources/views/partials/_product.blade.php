@@ -15,7 +15,7 @@
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <a href="{{ $product->slug }}" data-toggle="modal" data-target="#{{ $product->slug }}" @foreach($product->images as $image) @if($image->pivot->is_maskot == 1) data-link="{{ asset($image->path) }}" @endif @endforeach class="product-modal-link">
+                                            <a href="{{ $product->slug }}" data-toggle="modal" data-target="#{{ $product->slug }}" @foreach($product->images as $image) @if($image->pivot->is_maskot == 1) data-link="{{ asset($image->imageMid->location) }}" @endif @endforeach class="product-modal-link">
                                                 <h5 class="text-center" style="overflow-wrap: break-word;min-height: 20px;">
                                                     {{ $product->name }}
                                                 </h5>
@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                         	<div class="text-center">
-    	                                    	<a href="{{ $product->slug }}" data-target="#{{ $product->slug }}" @foreach($product->images as $image) @if($image->pivot->is_maskot == 1) data-link="{{ asset($image->path) }}" @endif @endforeach data-toggle="modal" class="btn btn-primary product-modal-link">
+    	                                    	<a href="{{ $product->slug }}" data-target="#{{ $product->slug }}" @foreach($product->images as $image) @if($image->pivot->is_maskot == 1) data-link="{{ asset($image->imageMid->location) }}" @endif @endforeach data-toggle="modal" class="btn btn-primary product-modal-link">
     	                                    		Get This Package
     	                                    	</a>
                                         	</div>

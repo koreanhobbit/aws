@@ -24,7 +24,7 @@
 										<div class="thumbnail">
 											{{ csrf_field() }}
 											<a href="javascript:" type="button" data-toggle="modal" data-target="{{ '#'.'img-details' }}" class="image-thum-link" data-id="{{ $image->id }}">
-												<img src="{{ url($image->path) }}" alt="" class="img-responsive thumbnail-img">
+												<img src="{{ url($image->thumbnail->location) }}" alt="" class="img-responsive thumbnail-img">
 											</a>
 										</div>
 									</div>
@@ -38,7 +38,9 @@
 											<div class="col-md-7">
 												@component('admin.widgets.panel')
 													@slot('panelBody')
-														<img src="" alt="" class="img-responsive" id="img-in-details">
+														<div class="thumbnail">
+															<img src="" alt="" class="img-responsive img-thumbnail" id="img-in-details">
+														</div>
 													@endslot
 													@slot('panelFooter')
 														@slot('panelFooterClass', 'text-center')
@@ -150,7 +152,7 @@
 					success: function (data){
 						imageId = data.id;
 						routeAdmin = "{{ url('admin') }}";
-						storageUrl = "{{ url('storage/images/') }}";
+						storageUrl = "{{ url('storage/images/thumbnail/') }}";
 						var created_at = data.created_at.date;
 						var updated_at = data.updated_at.date;
 						created_at = created_at.substring(0, created_at.indexOf('.'));

@@ -20,7 +20,7 @@
                                     <div class="col-md-4">
                                         <div class="panel panel-primary">
                                           <div class="panel-heading">
-                                             <img src="{{ asset($member->images->first()->path) }}" alt="{{ $member->images->first()->name }}" class="img-responsive img-rounded img-centered">
+                                             <img src="{{ asset($member->images->first()->imageMid->location) }}" alt="{{ $member->images->first()->name }}" class="img-responsive img-rounded img-centered">
                                           </div>
                                           <div class="panel-body">
                                             <div class="table-responsive">

@@ -135,7 +135,7 @@
 								<div class="thumbnail">
 									@foreach($product->images as $image)
 										@if($image->pivot->is_maskot == 1)		
-											<img src="{{ asset($image->path) }}" title="{{ $image->name }}" class="img-responsive">
+											<img src="{{ asset($image->thumbnail->location) }}" title="{{ $image->name }}" class="img-responsive">
 										@endif
 									@endforeach
 								</div>
@@ -158,7 +158,7 @@
 										@foreach($product->images as $image)
 											@if($image->pivot->is_maskot == 0)
 												<div class="thumbnail gallerydisplay col-sm-6" data-id="{{ $image->id }}">
-													<img src="{{ asset($image->path) }}" title="{{ $image->name }}" class="img-responsive gal-img">
+													<img src="{{ asset($image->thumbnail->location) }}" title="{{ $image->name }}" class="img-responsive gal-img">
 													<div class="remove-img">
 														<i class="fa fa-remove">
 														</i>
